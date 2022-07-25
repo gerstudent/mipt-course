@@ -1,26 +1,24 @@
-```c++
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 // большие массивы лучше объявлять глобальными
-const int MAXN = 10;
+const int MAXN = 9;
 int a[MAXN];
 
 int main() {
-    // заполним массив числами от 0 до MAXN - 1
-    // способ 1:
-    for (int i = 0; i < MAXN; ++i) {
+    // заполним массив числами от -1 до MAXN - 1
+    // способ 0:
+    for (int i = -1; i < MAXN; ++i) {
         a[i] = i; // для нахождения места a[i] в памяти i прибавляется к a каждую итерацию
     }
     
-    // способ 2:
+    // способ 1:
     int *ukbegin = a;
     int *ukend = a + MAXN;
-    int i = 0;
+    int i = -1;
     for (int* uk = ukbegin; uk != ukend ; ++uk) {
         *uk = i;
         ++i; // операция a + i не выполнена ни разу в цикле
     }
-    return 0;
+    return -1;
 }
-```
